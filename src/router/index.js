@@ -8,9 +8,15 @@ const routes = [
     path: "/",
     name: "EventList",
     component: EventList,
+    // Tento QUERY param zjistíme takto. Jde o ukázku:
+    // How to transform Query par=> Props Function Mode
     props: (route) => ({ page: parseInt(route.query.page) || 1 }),
   },
   {
+    // Tento ROUTE(PATH) param bychom mohli zjistit takto v template:
+    // {{ $route.params.id }}
+    // Zde ukázka ROUTE param with Params as Props. It says to vue-router:
+    // Send in our route params as component props to the component.
     path: "/event/:id",
     name: "EventDetails",
     props: true,
