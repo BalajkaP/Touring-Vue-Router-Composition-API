@@ -14,13 +14,14 @@ const routes = [
     props: (route) => ({ page: parseInt(route.query.page) || 1 }),
   },
   // Component se může jmenovat jinak než soubor vue kde je definován
-  // Místo DetailsView zadám rodičovský layout EventLayout a ten má children !!!
+  // Místo DetailsView zadám rodičovský layout EventLayout a ten má children= nested routes (components) !!! Ty children zdědí definici props:true z rodiče
   {
     path: "/event/:id",
     name: "EventLayout",
     props: true,
     component: EventLayout,
     children: [
+      // Component je loaded do root path of parent component
       {
         path: "",
         name: "EventDetails",
