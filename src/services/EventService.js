@@ -10,6 +10,8 @@ const apiClient = axios.create({
 });
 
 export default {
+  // Jako parametr beru počet events per page a číslo page
+  // Když mu tedy pošlu číslo page, tak díky perPage ví, které přesně eventy vzít.
   getEvents(perPage, page) {
     return apiClient.get("/events?_limit=" + perPage + "&_page=" + page);
   },

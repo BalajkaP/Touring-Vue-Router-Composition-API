@@ -8,6 +8,7 @@ defineProps({
 </script>
 
 <template>
+  <!-- Zde je ukázka PATH (ROUTE,URL) param díky params -->
   <router-link
     class="event-link"
     :to="{ name: 'EventDetails', params: { id: event.id } }"
