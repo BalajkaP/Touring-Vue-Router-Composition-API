@@ -41,6 +41,8 @@ const routes = [
   // Pčed tímto jsme měli nahoře /event/:id, ale změnili jsme to na /events/:id
   // a abychom nezpůsobili uživatelům 404, tak přidáme tento redirect.
   // Tento redirect přesměruje na správnou adresu.
+  // This is commonly used when you've changed your URL structure (maybe  
+  // from /event/ to /events/) but want to ensure old bookmarks and links still work by automatically redirecting users to the new URLs.
   // Princip: 
   // This defines a route pattern that the router should watch for
   // /event/ is the fixed part of the URL
