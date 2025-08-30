@@ -13,6 +13,8 @@ const routes = [
     component: EventList,
     props: (route) => ({ page: parseInt(route.query.page) || 1 }),
   },
+  // Component se může jmenovat jinak než soubor vue kde je definován
+  // Místo DetailsView zadám rodičovský layout EventLayout a ten má children !!!
   {
     path: "/event/:id",
     name: "EventLayout",

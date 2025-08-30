@@ -10,6 +10,7 @@ defineProps({
 </script>
 
 <template>
+  <!-- EventDetails má stejný link jako EventLayout -->
   <router-link
     class="event-link"
     :to="{ name: 'EventDetails', params: { id: event.id } }"
