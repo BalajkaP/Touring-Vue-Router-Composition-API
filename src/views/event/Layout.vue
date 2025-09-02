@@ -10,6 +10,7 @@ const router = useRouter();
 const id = computed(() => props.id);
 
 const event = ref(null);
+
 onMounted(() => {
   EventService.getEvent(id.value)
     .then((response) => {
@@ -19,6 +20,7 @@ onMounted(() => {
       if (error.response && error.response.status == 404) {
         router.push({
           name: "404Resource",
+          // Zde natvrdo nastavím že resource má hodnotu "event"
           params: { resource: "event" },
         });
       } else {

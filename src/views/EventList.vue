@@ -2,6 +2,9 @@
 import EventCard from "@/components/EventCard.vue";
 import EventService from "@/services/EventService.js";
 import { computed, defineProps, onMounted, ref, watch } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const props = defineProps(["page"]);
 
@@ -20,7 +23,8 @@ const fetchEvents = () => {
 			totalEvents.value = response.headers["x-total-count"];
 		})
 		.catch((error) => {
-			console.log(error);
+			// console.log(error);
+			router.push({ name: "NetworkError" });
 		});
 };
 
@@ -68,10 +72,12 @@ watch(
 	flex-direction: column;
 	align-items: center;
 }
+
 .pagination {
 	display: flex;
 	width: 290px;
 }
+
 .pagination a {
 	flex: 1;
 	text-decoration: none;

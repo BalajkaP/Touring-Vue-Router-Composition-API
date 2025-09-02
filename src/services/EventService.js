@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const apiClient = axios.create({
-  baseURL: "https://my-json-server.typicode.com/Code-Pop/Touring-Vue-Router",
+  // baseURL: "https://my-json-server.typicode.com/Code-Pop/Touring-Vue-Router",
+  // Toto zadat pouze pro test network failure
+  baseURL: "https://my-json-server.typicode.co/Code-Pop/Touring-Vue-Router",
   withCredentials: false,
   headers: {
     Accept: "application/json",

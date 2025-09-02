@@ -49,17 +49,22 @@ const routes = [
     name: "About",
     component: About,
   },
+  // Match all routes that don't match any of the above existing routes
   {
     path: "/:catchAll(.*)",
     name: "NotFound",
     component: NotFound,
   },
+  // Tato cesta vznikne v .catch((error) v Layout.vue
+  // A resource je definováno jako props v NotFound.vue, a taky zde
+  // řeknu že props je true, aby se to předalo jako props
   {
     path: "/404/:resource",
     name: "404Resource",
     component: NotFound,
     props: true,
   },
+  // Tato cesta taky vznikne v .catch((error) v Layout.vue
   {
     path: "/network-error",
     name: "NetworkError",

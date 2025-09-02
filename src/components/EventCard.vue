@@ -10,6 +10,8 @@ defineProps({
 </script>
 
 <template>
+  <!-- EventDetails a EventLayout mají vlastně stejnou URL, ale EventDetails je child route a EventLayout je parent route. Takže když kliknu na EventCard, tak se načte EventLayout a v něm EventDetails -->
+  <!-- Aby to fungovalo, musím předat id eventu jako param do URL. -->
   <router-link
     class="event-link"
     :to="{ name: 'EventDetails', params: { id: event.id } }"
