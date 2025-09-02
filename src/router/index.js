@@ -8,6 +8,8 @@ import About from "@/views/About.vue";
 
 const routes = [
   {
+    // Umí pracovat s QUERY parametrem page dodaným v URL z EventList.vue
+    // v router-link. Pokud není dodán, nastaví page na 1
     path: "/",
     name: "EventList",
     component: EventList,
