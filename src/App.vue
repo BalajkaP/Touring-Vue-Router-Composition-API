@@ -17,10 +17,12 @@ const GStore = inject("GStore");
 </template>
 
 <style>
+/* Zajistí že hláška pozadí zežloutne a pak postupně mizí až transparent */
 @keyframes yellowfade {
   from {
     background: yellow;
   }
+
   to {
     background: transparent;
   }

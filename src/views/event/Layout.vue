@@ -10,7 +10,9 @@ const router = useRouter();
 const id = computed(() => props.id);
 
 const event = ref(null);
+
 onMounted(() => {
+  // Pomocí ID si znovu získám data o eventu z API
   EventService.getEvent(id.value)
     .then((response) => {
       event.value = response.data;
